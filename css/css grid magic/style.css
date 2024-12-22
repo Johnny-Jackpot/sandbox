@@ -41,6 +41,12 @@ h1 {
     gap: 0.5rem;
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+        "..   two two    two    three  four ..    .."
+        "one  two two    two    five   five six   .."
+        "..   two two    two    five   five seven eight"
+        "nine ten eleven eleven twelve ..   ..    .."
+        "..   ..  eleven eleven ..     ..   ..    ..";
 }
 
 .collage > div {
@@ -55,50 +61,50 @@ h1 {
     object-fit: cover;
 }
 
-.collage:nth-child(1) {
+.collage :nth-child(1) {
     grid-area: one;
 }
 
-.collage:nth-child(2) {
+.collage :nth-child(2) {
     grid-area: two;
 }
 
-.collage:nth-child(3) {
+.collage :nth-child(3) {
     grid-area: three;
 }
 
-.collage:nth-child(4) {
+.collage :nth-child(4) {
     grid-area: four;
 }
 
-.collage:nth-child(5) {
+.collage :nth-child(5) {
     grid-area: five;
 }
 
-.collage:nth-child(6) {
+.collage :nth-child(6) {
     grid-area: six;
 }
 
-.collage:nth-child(7) {
+.collage :nth-child(7) {
     grid-area: seven;
 }
 
-.collage:nth-child(8) {
+.collage :nth-child(8) {
     grid-area: eight;
 }
 
-.collage:nth-child(9) {
+.collage :nth-child(9) {
     grid-area: nine;
 }
 
-.collage:nth-child(10) {
+.collage :nth-child(10) {
     grid-area: ten;
 }
 
-.collage:nth-child(11) {
+.collage :nth-child(11) {
     grid-area: eleven;
 }
 
-.collage:nth-child(12) {
+.collage :nth-child(12) {
     grid-area: twelve;
 }
