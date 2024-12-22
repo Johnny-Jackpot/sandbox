@@ -86,3 +86,19 @@ h1 {
 .collage:nth-child(8) {
     grid-area: eight;
 }
+
+.collage:nth-child(9) {
+    grid-area: nine;
+}
+
+.collage:nth-child(10) {
+    grid-area: ten;
+}
+
+.collage:nth-child(11) {
+    grid-area: eleven;
+}
+
+.collage:nth-child(12) {
+    grid-area: twelve;
+}
