@@ -1,3 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 img {
     max-inline-size: 100%;
+}
+
+:root {
+    --color-main: #070707;
+    --color-main-background: #fff;
+    --color-main-background-line: #efefef;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-main);
+    padding: 3rem 3rem 0;
+    background: fixed linear-gradient(var(--color-main), var(--color-main) 6px, transparent 6px, transparent),
+    fixed linear-gradient(transparent, var(--color-main-background) 90%),
+    fixed repeating-linear-gradient(var(--color-main-background-line), var(--color-main-background-line) 1px, transparent 1px, transparent 40px),
+    fixed repeating-linear-gradient(to right, var(--color-main-background-line), var(--color-main-background-line) 1px, transparent 1px, transparent 40px),
+    white;
+}
+
+h1 {
+    font-size: 1.75rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-block-end: 1em;
+}
+
+.collage {
+    max-width: 800px;
+    margin-inline: auto;
 }
