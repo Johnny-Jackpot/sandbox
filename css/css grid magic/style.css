@@ -37,4 +37,20 @@ h1 {
 .collage {
     max-width: 800px;
     margin-inline: auto;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.collage > div {
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.collage img {
+    width: 100%;
+    aspect-ratio: 1;
+    display: block;
+    object-fit: cover;
 }
