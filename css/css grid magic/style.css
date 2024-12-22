@@ -75,6 +75,8 @@ h1 {
 
 .collage :nth-child(4) {
     grid-area: four;
+    background-color: #ffecc3;
+    border-bottom-right-radius: 100%;
 }
 
 .collage :nth-child(5) {
@@ -83,6 +85,8 @@ h1 {
 
 .collage :nth-child(6) {
     grid-area: six;
+    background-color: #ccf0ee;
+    border-top-right-radius: 100%;
 }
 
 .collage :nth-child(7) {
@@ -91,10 +95,14 @@ h1 {
 
 .collage :nth-child(8) {
     grid-area: eight;
+    background-color: #cdd7f0;
+    border-radius: 100%;
 }
 
 .collage :nth-child(9) {
     grid-area: nine;
+    background-color: #ffdce0;
+    border-top-left-radius: 100%;
 }
 
 .collage :nth-child(10) {
