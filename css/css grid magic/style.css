@@ -54,3 +54,35 @@ h1 {
     display: block;
     object-fit: cover;
 }
+
+.collage:nth-child(1) {
+    grid-area: one;
+}
+
+.collage:nth-child(2) {
+    grid-area: two;
+}
+
+.collage:nth-child(3) {
+    grid-area: three;
+}
+
+.collage:nth-child(4) {
+    grid-area: four;
+}
+
+.collage:nth-child(5) {
+    grid-area: five;
+}
+
+.collage:nth-child(6) {
+    grid-area: six;
+}
+
+.collage:nth-child(7) {
+    grid-area: seven;
+}
+
+.collage:nth-child(8) {
+    grid-area: eight;
+}
