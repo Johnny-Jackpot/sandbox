@@ -59,6 +59,12 @@ h1 {
     aspect-ratio: 1;
     display: block;
     object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.collage img:hover {
+    scale: 1.15;
+    rotate: 3deg;
 }
 
 .collage :nth-child(1) {
