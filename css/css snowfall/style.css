@@ -28,7 +28,9 @@ h1 {
     text-transform: uppercase;
 }
 
-.snowfall {
+.snowfall,
+.snowfall:before,
+.snowfall:after {
     position: absolute;
     inset: 0;
     content: '';
@@ -36,5 +38,17 @@ h1 {
 
     background-image: radial-gradient(circle at 5% 10%, #fff 3px, transparent 6px),
     radial-gradient(circle at 65% 28%, #fff 2px, transparent 4px);
+}
+
+.snowfall {
     background-size: 65% 100%;
 }
+
+.snowfall:before {
+    background-size: 45% 100%;
+}
+
+.snowfall:after {
+    background-size: 32% 100%;
+}
+
