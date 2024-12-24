@@ -47,18 +47,31 @@ h1 {
 }
 
 .snowfall {
+    animation: snowfall 20s linear infinite;
     background-size: 65% 100%;
 }
 
 .snowfall:before {
+    animation: snowfall 27s linear infinite;
     inset: -4rem 0 0;
     opacity: 0.7;
     background-size: 45% 100%;
 }
 
 .snowfall:after {
+    animation: snowfall 37s linear infinite;
     inset: -8rem 0 0;
     opacity: 0.8;
     background-size: 32% 100%;
+}
+
+@keyframes snowfall {
+    0% {
+        --y: -1%;
+    }
+
+    100% {
+        --y: 101%;
+    }
 }
 
