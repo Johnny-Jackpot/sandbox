@@ -10,6 +10,7 @@ body {
     line-height: 1.7;
     color: #fff;
     padding: 3rem;
+    position: relative;
     min-block-size: 100vh;
 
     display: grid;
@@ -25,4 +26,11 @@ h1 {
     font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
     line-height: 1.3;
     text-transform: uppercase;
+}
+
+.snowfall {
+    position: absolute;
+    inset: 0;
+    content: '';
+    overflow: hidden;
 }
