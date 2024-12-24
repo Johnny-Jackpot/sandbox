@@ -10,4 +10,7 @@ body {
     line-height: 1.7;
     color: #fff;
     padding: 3rem;
+    min-block-size: 100vh;
+
+    background: url("images/photo-1677131757262-8b8b6f2a1135.jpg") fixed no-repeat center / cover;
 }
