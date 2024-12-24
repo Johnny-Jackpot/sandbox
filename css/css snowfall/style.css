@@ -28,6 +28,12 @@ h1 {
     text-transform: uppercase;
 }
 
+@property --y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: -1%;
+}
+
 .snowfall,
 .snowfall:before,
 .snowfall:after {
@@ -36,8 +42,8 @@ h1 {
     content: '';
     overflow: hidden;
 
-    background-image: radial-gradient(circle at 5% 10%, #fff 3px, transparent 6px),
-    radial-gradient(circle at 65% 28%, #fff 2px, transparent 4px);
+    background-image: radial-gradient(circle at 5% var(--y), #fff 3px, transparent 6px),
+    radial-gradient(circle at 65% calc(var(--y) * 1.3), #fff 2px, transparent 4px);
 }
 
 .snowfall {
