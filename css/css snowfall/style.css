@@ -12,5 +12,17 @@ body {
     padding: 3rem;
     min-block-size: 100vh;
 
-    background: url("images/photo-1677131757262-8b8b6f2a1135.jpg") fixed no-repeat center / cover;
+    display: grid;
+    place-content: center;
+
+    background: linear-gradient(#8dd4f7, #9080fa 85%) no-repeat,
+    url("images/photo-1677131757262-8b8b6f2a1135.jpg") fixed no-repeat center / cover;
+    background-blend-mode: soft-light;
+}
+
+h1 {
+    font-family: "Snowburst One", sans-serif;
+    font-size: clamp(2rem, 5vw + 1rem, 3.5rem);
+    line-height: 1.3;
+    text-transform: uppercase;
 }
