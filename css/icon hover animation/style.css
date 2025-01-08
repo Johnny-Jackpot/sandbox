@@ -62,4 +62,12 @@ a:after {
     content: '';
     inset: -5px;
     border-radius: inherit;
+    background: conic-gradient(currentColor 100%, transparent 100%);
+}
+
+a:hover,
+a:focus-visible,
+a:focus-within {
+    color: greenyellow;
+    outline: 1px solid transparent;
 }
