@@ -102,3 +102,13 @@ a:nth-child(2):before {
 a:nth-child(2):after {
     display: none;
 }
+
+a:nth-child(3):hover,
+a:nth-child(3):focus-visible,
+a:nth-child(3):focus-within {
+    --fill: 50%;
+}
+
+a:nth-child(3):after {
+    transform: rotateY(180deg);
+}
