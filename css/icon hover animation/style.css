@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #fff;
+    padding: 6rem 3rem 3rem;
+
+    background: fixed linear-gradient(transparent, #070707 70%),
+    fixed repeating-linear-gradient(#2b2b2b, #2b2b2b 1px, transparent 1px, transparent 40px),
+    fixed repeating-linear-gradient(to right, #2b2b2b, #2b2b2b 1px, transparent 1px, transparent 40px),
+    #070707;
+}
+
+h1, h2 {
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-block-end: 3rem;
+}
