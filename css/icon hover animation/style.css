@@ -55,6 +55,12 @@ a {
     transition: color 0.6s ease-in-out;
 }
 
+@property --fill {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+}
+
 a:before,
 a:after {
     position: absolute;
@@ -62,7 +68,8 @@ a:after {
     content: '';
     inset: -5px;
     border-radius: inherit;
-    background: conic-gradient(currentColor 100%, transparent 100%);
+    background: conic-gradient(currentColor var(--fill), transparent var(--fill));
+    transition: --fill 0.6s ease-in-out;
 }
 
 a:hover,
@@ -70,4 +77,14 @@ a:focus-visible,
 a:focus-within {
     color: greenyellow;
     outline: 1px solid transparent;
+}
+
+a:nth-child(1):hover,
+a:nth-child(1):focus-visible,
+a:nth-child(1):focus-within {
+    --fill: 100%;
+}
+
+a:nth-child(1):after {
+    display: none;
 }
