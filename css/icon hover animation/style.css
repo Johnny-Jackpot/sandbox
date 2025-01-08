@@ -33,3 +33,24 @@ h2 {
     text-transform: uppercase;
     margin-block-end: 3rem;
 }
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: 5rem;
+    aspect-ratio: 1;
+    font-size: 2rem;
+    color: #636363;
+    background-color: #2b2b2b;
+    border-radius: 50%;
+    transition: color 0.6s ease-in-out;
+}
