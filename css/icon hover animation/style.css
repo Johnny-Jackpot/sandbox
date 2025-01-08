@@ -126,3 +126,13 @@ a:nth-child(4):before {
 a:nth-child(4):after {
     transform: rotate(180deg);
 }
+
+a:nth-child(5):hover,
+a:nth-child(5):focus-visible,
+a:nth-child(5):focus-within {
+    --fill: 50%;
+}
+
+a:nth-child(5):after {
+    transform: rotate(180deg);
+}
