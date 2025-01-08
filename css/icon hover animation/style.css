@@ -69,7 +69,13 @@ a:after {
     inset: -5px;
     border-radius: inherit;
     background: conic-gradient(currentColor var(--fill), transparent var(--fill));
-    transition: --fill 0.6s ease-in-out;
+    transition: --fill 0.6s 0.3s ease-in-out;
+}
+
+a:hover,
+a:hover:before,
+a:hover:after {
+    transition-delay: 0s;
 }
 
 a:hover,
