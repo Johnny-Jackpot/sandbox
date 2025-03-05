@@ -21,7 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/essentials/conditional-rendering">conditional-rendering</RouterLink>
         <RouterLink to="/essentials/list-rendering">list-rendering</RouterLink>
         <RouterLink to="/essentials/event-handling">event-handling</RouterLink>
-
+        <RouterLink to="/essentials/form-input-bindings">form-input-bindings</RouterLink>
       </nav>
     </div>
   </header>
