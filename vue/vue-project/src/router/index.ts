@@ -20,7 +20,17 @@ const router = createRouter({
     {
       path: '/introduction',
       name: 'introduction',
-      component: () => import('../views/intoduction/IntroductionView.vue'),
+      component: () => import('../views/introduction/IntroductionView.vue'),
+    },
+    {
+      path: '/essentials',
+      children: [
+        {
+          path: 'template-syntax',
+          name: 'template-syntax',
+          component: () => import('../views/essentials/TemplateSyntaxView.vue'),
+        },
+      ],
     },
   ],
 })
