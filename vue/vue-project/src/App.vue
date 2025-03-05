@@ -19,7 +19,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/essentials/computed-properties">reactivity-fundamentals</RouterLink>
         <RouterLink to="/essentials/class-and-style-bindings">class-and-style-bindings</RouterLink>
         <RouterLink to="/essentials/conditional-rendering">conditional-rendering</RouterLink>
-
+        <RouterLink to="/essentials/list-rendering">list-rendering</RouterLink>
       </nav>
     </div>
   </header>
