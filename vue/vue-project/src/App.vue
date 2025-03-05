@@ -20,6 +20,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/essentials/class-and-style-bindings">class-and-style-bindings</RouterLink>
         <RouterLink to="/essentials/conditional-rendering">conditional-rendering</RouterLink>
         <RouterLink to="/essentials/list-rendering">list-rendering</RouterLink>
+        <RouterLink to="/essentials/event-handling">event-handling</RouterLink>
+
       </nav>
     </div>
   </header>
