@@ -40,6 +40,11 @@ const router = createRouter({
           name: 'computed-properties',
           component: () => import('../views/essentials/ComputedPropertiesView.vue'),
         },
+        {
+          path: 'class-and-style-bindings',
+          name: 'class-and-style-bindings',
+          component: () => import('../views/essentials/ClassAndStyleBindingView.vue'),
+        },
       ],
     },
   ],
