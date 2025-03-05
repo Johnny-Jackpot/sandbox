@@ -15,6 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/introduction">Introduction</RouterLink>
         <RouterLink to="/essentials/template-syntax">template-syntax</RouterLink>
+        <RouterLink to="/essentials/reactivity-fundamentals">reactivity-fundamentals</RouterLink>
       </nav>
     </div>
   </header>
@@ -26,6 +27,7 @@ import HelloWorld from './components/HelloWorld.vue'
 .icon {
   transform: scale(4);
 }
+
 header {
   line-height: 1.5;
   max-height: 100vh;

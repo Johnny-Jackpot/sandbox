@@ -30,6 +30,11 @@ const router = createRouter({
           name: 'template-syntax',
           component: () => import('../views/essentials/TemplateSyntaxView.vue'),
         },
+        {
+          path: 'reactivity-fundamentals',
+          name: 'reactivity-fundamentals',
+          component: () => import('../views/essentials/ReactivityFundamentalsView.vue'),
+        },
       ],
     },
   ],
