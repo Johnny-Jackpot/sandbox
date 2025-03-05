@@ -35,6 +35,11 @@ const router = createRouter({
           name: 'reactivity-fundamentals',
           component: () => import('../views/essentials/ReactivityFundamentalsView.vue'),
         },
+        {
+          path: 'computed-properties',
+          name: 'computed-properties',
+          component: () => import('../views/essentials/ComputedPropertiesView.vue'),
+        },
       ],
     },
   ],
