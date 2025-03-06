@@ -65,6 +65,11 @@ const router = createRouter({
           name: 'form-input-bindings',
           component: () => import('../views/essentials/FormInputBindingsView.vue'),
         },
+        {
+          path: 'watchers',
+          name: 'watchers',
+          component: () => import('../views/essentials/WatchersView.vue'),
+        },
       ],
     },
   ],
