@@ -70,6 +70,11 @@ const router = createRouter({
           name: 'watchers',
           component: () => import('../views/essentials/WatchersView.vue'),
         },
+        {
+          path: 'template-refs',
+          name: 'template-refs',
+          component: () => import('../views/essentials/TemplateRefsView.vue'),
+        },
       ],
     },
   ],

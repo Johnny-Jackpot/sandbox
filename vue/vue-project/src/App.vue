@@ -23,6 +23,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/essentials/event-handling">event-handling</RouterLink>
         <RouterLink to="/essentials/form-input-bindings">form-input-bindings</RouterLink>
         <RouterLink to="/essentials/watchers">watchers</RouterLink>
+        <RouterLink to="/essentials/template-refs">template-refs</RouterLink>
+
       </nav>
     </div>
   </header>
