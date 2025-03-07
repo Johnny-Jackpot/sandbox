@@ -156,12 +156,7 @@ function unwatchAll() {
   <div>
     TODO: {{ JSON.stringify(data) }}
     <input id="todo-id" type="number" v-model.number="todoId" disabled />
-    <button
-      @click="
-        todoId++
-        todoId++
-      "
-    >
+    <button @click="todoId++; todoId++">
       Next todo
     </button>
   </div>
