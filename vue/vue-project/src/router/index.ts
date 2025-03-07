@@ -80,6 +80,11 @@ const router = createRouter({
           name: 'components-basics',
           component: () => import('../views/essentials/ComponentsBasicsView.vue'),
         },
+        {
+          path: 'lifecycle-hooks',
+          name: 'lifecycle-hooks',
+          component: () => import('../views/essentials/LifeCycleHooksView.vue'),
+        },
       ],
     },
   ],

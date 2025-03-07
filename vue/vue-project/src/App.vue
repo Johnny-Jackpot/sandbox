@@ -25,6 +25,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/essentials/watchers">watchers</RouterLink>
         <RouterLink to="/essentials/template-refs">template-refs</RouterLink>
         <RouterLink to="/essentials/components-basics">components-basics</RouterLink>
+        <RouterLink to="/essentials/lifecycle-hooks">lifecycle-hooks</RouterLink>
       </nav>
     </div>
   </header>
