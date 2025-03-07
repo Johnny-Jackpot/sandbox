@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref, watch, watchEffect } from 'vue'
+import { onWatcherCleanup, reactive, ref, watch, watchEffect } from 'vue'
 
 type Answer = {
   answer: string
@@ -71,12 +71,24 @@ watch(
 
 const todoId = ref(1)
 const data = ref(null)
-watchEffect(async () => {
+watchEffect(async (onCleanup) => {
   const controller = new AbortController()
+  onWatcherCleanup(() => {
+    console.log('Watcher cleanup executed')
+  })
   const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${todoId.value}`, {
     signal: controller.signal,
   })
+
   data.value = await res.json()
+
+  onCleanup(() => {
+    console.log('Cleanup executed')
+
+    controller.abort()
+  })
+
+
 })
 </script>
 
@@ -101,7 +113,7 @@ watchEffect(async () => {
   </div>
   <div>
     TODO: {{ JSON.stringify(data) }}
-    <button @click="todoId++">Next todo</button>
+    <button @click="todoId++; todoId++">Next todo</button>
   </div>
 </template>
 
