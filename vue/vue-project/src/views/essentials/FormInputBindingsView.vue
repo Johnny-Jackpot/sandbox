@@ -1,42 +1,45 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const text = ref();
-const message = ref();
-const textAreaMessage = ref();
-const singleCheckbox = ref(false);
-const names = ref(new Set());
-const radio = ref();
-const singleSelect = ref();
-const multipleSelect = ref([]);
+const text = ref()
+const message = ref()
+const textAreaMessage = ref()
+const singleCheckbox = ref(false)
+const names = ref(new Set())
+const radio = ref()
+const singleSelect = ref()
+const multipleSelect = ref([])
 
-const selectedFromDynamicOptions = ref();
+const selectedFromDynamicOptions = ref()
 const dynamicOptions = ref([
   { id: 1, name: 'Jack' },
   { id: 2, name: 'John' },
   { id: 3, name: 'Joe' },
 ])
 
-const checkboxTrueValue = ref('yes');
-const checkboxFalseValue = ref('no');
-const checkboxValue = ref('no');
+const checkboxTrueValue = ref('yes')
+const checkboxFalseValue = ref('no')
+const checkboxValue = ref('no')
 
-const radio1 = ref('radio1');
-const radio2 = ref('radio2');
-const myRadio = ref('radio1');
+const radio1 = ref('radio1')
+const radio2 = ref('radio2')
+const myRadio = ref('radio1')
 
-const mySelected = ref();
+const mySelected = ref()
 
-const lazyText = ref();
-const number = ref();
-
+const lazyText = ref()
+const number = ref()
 </script>
 
 <template>
-  <div style="margin-bottom: 100px;">
+  <div style="margin-bottom: 100px">
     <h2>form-input-bindings</h2>
     <div>
-      <input type="text" :value="text" @input="event => text = (event.target as HTMLInputElement).value" />
+      <input
+        type="text"
+        :value="text"
+        @input="(event) => (text = (event.target as HTMLInputElement).value)"
+      />
       <p>{{ text }}</p>
     </div>
     <div>
@@ -45,7 +48,7 @@ const number = ref();
     </div>
     <div>
       <span>Multiline message is:</span>
-      <p style="white-space: pre-line;">{{ textAreaMessage }}</p>
+      <p style="white-space: pre-line">{{ textAreaMessage }}</p>
       <textarea v-model="textAreaMessage" placeholder="add multiple lines"></textarea>
     </div>
     <div>
@@ -91,12 +94,19 @@ const number = ref();
       Selected from dynamic options: {{ selectedFromDynamicOptions }}<br />
       <select v-model="selectedFromDynamicOptions">
         <option disabled value="">Please select one</option>
-        <option v-for="option in dynamicOptions" :value="option.id" :key="option.id">{{ option.name }}</option>
+        <option v-for="option in dynamicOptions" :value="option.id" :key="option.id">
+          {{ option.name }}
+        </option>
       </select>
     </div>
     <div>
-      <input type="checkbox" id="my-checkbox" v-model="checkboxValue" :true-value="checkboxTrueValue"
-        :false-value="checkboxFalseValue" />
+      <input
+        type="checkbox"
+        id="my-checkbox"
+        v-model="checkboxValue"
+        :true-value="checkboxTrueValue"
+        :false-value="checkboxFalseValue"
+      />
       <label for="my-checkbox">{{ checkboxValue }}</label>
     </div>
     <div>
@@ -111,7 +121,9 @@ const number = ref();
       My Selected: {{ mySelected }}<br />
       <select v-model="mySelected">
         <option disabled value="">Please select one</option>
-        <option v-for="option in dynamicOptions" :value="option" :key="option.id">{{ option.name }}</option>
+        <option v-for="option in dynamicOptions" :value="option" :key="option.id">
+          {{ option.name }}
+        </option>
       </select>
     </div>
     <div>
@@ -121,7 +133,7 @@ const number = ref();
     </div>
     <div>
       <p>Number: {{ number }}</p>
-      <input type="text" v-model.number="number">
+      <input type="text" v-model.number="number" />
     </div>
   </div>
 </template>

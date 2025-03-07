@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const count = ref(0);
+const count = ref(0)
 
 function increment() {
-  count.value++;
+  count.value++
 }
 
 onMounted(() => {
-  console.log(`Iitial count is ${count.value}`);
-});
+  console.log(`Iitial count is ${count.value}`)
+})
 </script>
 
 <template>

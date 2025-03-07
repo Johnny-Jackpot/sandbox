@@ -1,29 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const count = ref(0);
-const name = ref('Vue 3');
+const count = ref(0)
+const name = ref('Vue 3')
 function greet(event: MouseEvent) {
-  alert(`Hello, ${name.value}!`);
-  alert((event.target as HTMLElement).tagName);
+  alert(`Hello, ${name.value}!`)
+  alert((event.target as HTMLElement).tagName)
 }
 function say(message: string) {
-  alert(message);
+  alert(message)
 }
 
 function warn(message: string, event: MouseEvent) {
-  alert((event.target as HTMLElement).tagName);
-  alert(message);
+  alert((event.target as HTMLElement).tagName)
+  alert(message)
 }
 
 function logEvent(event: MouseEvent) {
-  console.log(event);
+  console.log(event)
 }
 
 function onSubmit(event: Event) {
-  console.log(event, 'On submit');
+  console.log(event, 'On submit')
 }
-
 </script>
 
 <template>

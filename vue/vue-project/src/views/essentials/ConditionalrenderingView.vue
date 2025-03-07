@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const vueIsAwesome = ref(true);
-
+const vueIsAwesome = ref(true)
 </script>
 
 <template>

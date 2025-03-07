@@ -1,41 +1,37 @@
 <script setup lang="ts">
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref } from 'vue'
 
 const author = reactive({
   name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
+  books: ['Vue 2 - Advanced Guide', 'Vue 3 - Basic Guide', 'Vue 4 - The Mystery'],
 })
 
 const hasPublishedBooks = computed(() => {
-  console.log('computed()');
-  return author.books.length > 0 ? 'Yes' : 'No';
+  console.log('computed()')
+  return author.books.length > 0 ? 'Yes' : 'No'
 })
 
 function computehasPublishedBooks() {
-  console.log('computehasPublishedBooks()');
-  return author.books.length > 0 ? 'Yes' : 'No';
+  console.log('computehasPublishedBooks()')
+  return author.books.length > 0 ? 'Yes' : 'No'
 }
 
 function addBook() {
-  author.books.push('Vue 5 - The Awesomeness');
+  author.books.push('Vue 5 - The Awesomeness')
 }
 
-const firstName = ref('John');
-const lastName = ref('Doe');
+const firstName = ref('John')
+const lastName = ref('Doe')
 const fullName = computed({
   get(previousValue) {
-    console.log(previousValue);
+    console.log(previousValue)
 
-    return firstName.value + ' ' + lastName.value;
+    return firstName.value + ' ' + lastName.value
   },
 
   set(newFullName) {
-    [firstName.value, lastName.value] = newFullName.split(' ');
-  }
+    ;[firstName.value, lastName.value] = newFullName.split(' ')
+  },
 })
 </script>
 

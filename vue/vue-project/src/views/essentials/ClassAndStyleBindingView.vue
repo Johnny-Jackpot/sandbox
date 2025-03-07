@@ -1,28 +1,27 @@
 <script setup lang="ts">
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref } from 'vue'
 
-const textDanger = ref(false);
+const textDanger = ref(false)
 
 const classObj = reactive({
   danger: false,
   uppercase: false,
 })
 
-const isActive = ref(false);
-const error = ref(false);
+const isActive = ref(false)
+const error = ref(false)
 const computedClassObj = computed(() => ({
   active: isActive.value && !error.value,
-  'danger': error.value && !isActive.value,
-}));
+  danger: error.value && !isActive.value,
+}))
 
-const activeClass = ref('active');
-const uppercaseClass = ref('uppercase');
+const activeClass = ref('active')
+const uppercaseClass = ref('uppercase')
 
 const styleObject = reactive({
   color: 'red',
   fontSize: '20px',
-});
-
+})
 </script>
 
 <template>
