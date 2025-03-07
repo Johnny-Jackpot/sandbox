@@ -24,7 +24,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/essentials/form-input-bindings">form-input-bindings</RouterLink>
         <RouterLink to="/essentials/watchers">watchers</RouterLink>
         <RouterLink to="/essentials/template-refs">template-refs</RouterLink>
-
+        <RouterLink to="/essentials/components-basics">components-basics</RouterLink>
       </nav>
     </div>
   </header>

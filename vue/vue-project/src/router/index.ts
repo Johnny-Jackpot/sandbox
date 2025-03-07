@@ -75,6 +75,11 @@ const router = createRouter({
           name: 'template-refs',
           component: () => import('../views/essentials/TemplateRefsView.vue'),
         },
+        {
+          path: 'components-basics',
+          name: 'components-basics',
+          component: () => import('../views/essentials/ComponentsBasicsView.vue'),
+        },
       ],
     },
   ],
