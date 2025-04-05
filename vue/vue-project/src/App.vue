@@ -29,7 +29,7 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
     </div>
   </header>
-
+  <GlobalComponent />
   <RouterView />
 </template>
 

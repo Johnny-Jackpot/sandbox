@@ -88,6 +88,7 @@ onScopeDispose(() => {
 <template>
   <h1>lifecycle-hooks</h1>
   <p>Count: {{ count }}</p>
+  <GlobalComponent />
   <button @click="count++">Increment</button>
   <div>
     <CounterComponent :key="counterKey" />
