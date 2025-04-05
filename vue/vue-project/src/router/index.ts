@@ -87,6 +87,16 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/components-in-depth',
+      children: [
+        {
+          path: 'props',
+          name: 'props',
+          component: () => import('../views/components-in-depth/PropsView.vue'),
+        },
+      ],
+    },
   ],
 })
 

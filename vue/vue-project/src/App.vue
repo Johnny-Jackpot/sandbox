@@ -26,6 +26,9 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/essentials/template-refs">template-refs</RouterLink>
         <RouterLink to="/essentials/components-basics">components-basics</RouterLink>
         <RouterLink to="/essentials/lifecycle-hooks">lifecycle-hooks</RouterLink>
+        <RouterLink to="/components-in-depth/props">props</RouterLink>
+
+
       </nav>
     </div>
   </header>
