@@ -95,6 +95,11 @@ const router = createRouter({
           name: 'props',
           component: () => import('../views/components-in-depth/PropsView.vue'),
         },
+        {
+          path: 'events',
+          name: 'events',
+          component: () => import('../views/components-in-depth/EventsView.vue'),
+        },
       ],
     },
   ],
