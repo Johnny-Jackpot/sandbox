@@ -100,6 +100,11 @@ const router = createRouter({
           name: 'events',
           component: () => import('../views/components-in-depth/EventsView.vue'),
         },
+        {
+          path: 'component-v-model',
+          name: 'component-v-model',
+          component: () => import('../views/components-in-depth/ComponentVModel.vue'),
+        },
       ],
     },
   ],
