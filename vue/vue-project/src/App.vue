@@ -29,6 +29,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/components-in-depth/props">props</RouterLink>
         <RouterLink to="/components-in-depth/events">events</RouterLink>
         <RouterLink to="/components-in-depth/component-v-model">component-v-model</RouterLink>
+        <RouterLink to="/components-in-depth/fallthrough-attributes">fallthrough-attributes</RouterLink>
       </nav>
     </div>
   </header>

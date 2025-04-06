@@ -105,6 +105,11 @@ const router = createRouter({
           name: 'component-v-model',
           component: () => import('../views/components-in-depth/ComponentVModel.vue'),
         },
+        {
+          path: 'fallthrough-attributes',
+          name: 'fallthrough-attributes',
+          component: () => import('../views/components-in-depth/FallthrougAttributesView.vue'),
+        },
       ],
     },
   ],
