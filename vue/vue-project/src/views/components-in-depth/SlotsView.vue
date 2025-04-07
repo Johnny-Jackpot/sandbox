@@ -2,6 +2,8 @@
 import ConditionalSlotsTemplate from '@/components/slots/ConditionalSlotsTemplate.vue';
 import FancyButton from '@/components/slots/FancyButton.vue';
 import TemplateComponent from '@/components/slots/TemplateComponent.vue';
+import ScopedSlotComponent from '../../components/slots/ScopedSlotComponent.vue';
+import NamedScopedSlotComponent from '@/components/slots/NamedScopedSlotComponent.vue';
 
 const buttonTitle = 'Click me';
 const headerSlotName = 'header';
@@ -74,4 +76,19 @@ const headerSlotName = 'header';
       <p>Header conditional slot</p>
     </template>
   </ConditionalSlotsTemplate>
+  <ScopedSlotComponent v-slot="slotProps">
+    <p>Child message is: {{ slotProps.message }}</p>
+    <p>Child count is: {{ slotProps.count }}</p>
+  </ScopedSlotComponent>
+  <ScopedSlotComponent v-slot="{ message, count }">
+    {{ message }} {{ count }}
+  </ScopedSlotComponent>
+  <NamedScopedSlotComponent>
+    <template #default="{ message, count }">
+      <p>Default slot: {{ message }} {{ count }}</p>
+    </template>
+    <template #another-slot="anotherSlotProps">
+      Another slot: {{ anotherSlotProps.count }}
+    </template>
+  </NamedScopedSlotComponent>
 </template>
