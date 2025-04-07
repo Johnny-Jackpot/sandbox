@@ -5,6 +5,7 @@ import TemplateComponent from '@/components/slots/TemplateComponent.vue';
 import ScopedSlotComponent from '../../components/slots/ScopedSlotComponent.vue';
 import NamedScopedSlotComponent from '@/components/slots/NamedScopedSlotComponent.vue';
 import FancyList from '@/components/slots/FancyList.vue';
+import MouseTracker from '@/components/slots/MouseTracker.vue';
 
 const buttonTitle = 'Click me';
 const headerSlotName = 'header';
@@ -100,4 +101,7 @@ const headerSlotName = 'header';
       </div>
     </template>
   </FancyList>
+  <MouseTracker v-slot="{ x, y }">
+    Mouse is at: {{ x }}, {{ y }}
+  </MouseTracker>
 </template>
