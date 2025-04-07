@@ -13,7 +13,7 @@
 </template>
 
 
-<style>
+<style scoped>
 header {
   color: red;
 }

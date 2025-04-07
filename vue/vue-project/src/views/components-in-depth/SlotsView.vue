@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import ConditionalSlotsTemplate from '@/components/slots/ConditionalSlotsTemplate.vue';
 import FancyButton from '@/components/slots/FancyButton.vue';
 import TemplateComponent from '@/components/slots/TemplateComponent.vue';
 
 const buttonTitle = 'Click me';
+const headerSlotName = 'header';
 
 </script>
 
@@ -51,4 +53,25 @@ const buttonTitle = 'Click me';
       Shorthand footer
     </template>
   </TemplateComponent>
+  <ConditionalSlotsTemplate>
+    <template #footer>
+      <p>Footer conditional slot</p>
+    </template>
+    <template #[headerSlotName]>
+      <p>Header conditional slot</p>
+    </template>
+  </ConditionalSlotsTemplate>
+  <ConditionalSlotsTemplate>
+    <template #footer>
+      <p>Footer conditional slot</p>
+    </template>
+    <template #[headerSlotName]>
+      <p>Header conditional slot</p>
+    </template>
+  </ConditionalSlotsTemplate>
+  <ConditionalSlotsTemplate>
+    <template v-slot:[headerSlotName]>
+      <p>Header conditional slot</p>
+    </template>
+  </ConditionalSlotsTemplate>
 </template>
