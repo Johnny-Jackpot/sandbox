@@ -18,4 +18,6 @@ app.config.errorHandler = (err, vm, info) => {
   console.error('Vue error handler:', err, vm, info)
 }
 
+app.provide('app:message', 'App level hello world')
+
 app.mount('#app')

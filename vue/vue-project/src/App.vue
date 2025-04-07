@@ -31,6 +31,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/components-in-depth/component-v-model">component-v-model</RouterLink>
         <RouterLink to="/components-in-depth/fallthrough-attributes">fallthrough-attributes</RouterLink>
         <RouterLink to="/components-in-depth/slots">slots</RouterLink>
+        <RouterLink to="/components-in-depth/provide-inject">provide-inject</RouterLink>
       </nav>
     </div>
   </header>

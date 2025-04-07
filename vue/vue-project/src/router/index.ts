@@ -115,6 +115,11 @@ const router = createRouter({
           name: 'slots',
           component: () => import('../views/components-in-depth/SlotsView.vue'),
         },
+        {
+          path: 'provide-inject',
+          name: 'provide-inject',
+          component: () => import('../views/components-in-depth/ProvideInject.vue'),
+        },
       ],
     },
   ],
