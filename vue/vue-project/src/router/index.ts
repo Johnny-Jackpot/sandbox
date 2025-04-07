@@ -120,6 +120,11 @@ const router = createRouter({
           name: 'provide-inject',
           component: () => import('../views/components-in-depth/ProvideInject.vue'),
         },
+        {
+          path: 'async-components',
+          name: 'async-components',
+          component: () => import('../views/components-in-depth/AsyncComponentsView.vue'),
+        },
       ],
     },
   ],
