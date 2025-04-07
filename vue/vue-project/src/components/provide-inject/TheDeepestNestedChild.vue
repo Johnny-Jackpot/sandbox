@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import type { CountType, MessageType } from '@/views/components-in-depth/ProvideInject.vue';
+import { appMessage } from '@/main-inject-keys';
 import { inject, ref } from 'vue';
+import { countKey, expensiveCountKey, messageKey } from './keys';
 
-const message = inject<MessageType>('message')
-const countInject = inject<CountType>('count');
-const appMessage = inject('app:message');
+const message = inject(messageKey)
+const countInject = inject(countKey);
+const appMessageVal = inject(appMessage);
 
 const anotherMessage = inject('anotherMessage', 'Default another message')
 
@@ -16,7 +17,7 @@ const runExpansiveCalculation = () => {
   return 500;
 }
 
-const expensiveCount = inject('expensiveCount', () => runExpansiveCalculation(), true)
+const expensiveCount = inject(expensiveCountKey, () => runExpansiveCalculation(), true)
 
 
 </script>
@@ -29,7 +30,7 @@ const expensiveCount = inject('expensiveCount', () => runExpansiveCalculation(),
       Count: {{ countInject?.count }}
       <button @click="countInject?.increment">Increment</button>
     </p>
-    <p>App message: {{ appMessage }}</p>
+    <p>App message: {{ appMessageVal }}</p>
     <p>Another message: {{ anotherMessage }}</p>
     <p v-if="showExpensiveComputedVal">
       Expensive count: {{ expensiveCount }}

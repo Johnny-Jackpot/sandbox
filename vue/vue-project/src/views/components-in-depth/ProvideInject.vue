@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import NestedChild from '@/components/provide-inject/NestedChild.vue';
 import { inject, provide, readonly, ref } from 'vue';
+import NestedChild from '@/components/provide-inject/NestedChild.vue';
+import { countKey, messageKey } from '@/components/provide-inject/keys';
+import { appMessage } from '@/main-inject-keys';
 
 const message = ref('Hello world')
 const count = ref(0)
-
-export type MessageType = typeof message;
 
 const provideCount = {
   count: readonly(count),
@@ -14,17 +14,15 @@ const provideCount = {
   }
 }
 
-export type CountType = typeof provideCount;
+provide(messageKey, message)
+provide(countKey, provideCount)
 
-provide('message', message)
-provide('count', provideCount)
-
-const appMessage = inject('app:message')
+const appMessageVal = inject(appMessage)
 </script>
 
 <template>
   <h1>Provide / Inject</h1>
-  <p>App message: {{ appMessage }}</p>
+  <p>App message: {{ appMessageVal }}</p>
   <p>Parent message: {{ message }}</p>
   <p>Parent count: {{ count }}</p>
   <NestedChild />

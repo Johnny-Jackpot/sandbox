@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { inject, provide } from 'vue';
 import TheDeepestNestedChild from './TheDeepestNestedChild.vue';
+import { appMessage } from '@/main-inject-keys';
+import { expensiveCountKey } from './keys';
 
-const appMessage = inject('app:message')
-provide('app:message', 'Overrided app message in chain')
-provide('expensiveCount', 24)
+const appMessageVal = inject(appMessage)
+provide(appMessage, 'Overrided app message in chain')
+provide(expensiveCountKey, 24)
 </script>
 
 <template>
   <div>
     <h3>Deep nested child</h3>
-    <p>App message: {{ appMessage }}</p>
+    <p>App message: {{ appMessageVal }}</p>
     <TheDeepestNestedChild />
   </div>
 </template>
