@@ -33,6 +33,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/components-in-depth/slots">slots</RouterLink>
         <RouterLink to="/components-in-depth/provide-inject">provide-inject</RouterLink>
         <RouterLink to="/components-in-depth/async-components">async-components</RouterLink>
+        <RouterLink to="/reusability/composables">composables</RouterLink>
       </nav>
     </div>
   </header>

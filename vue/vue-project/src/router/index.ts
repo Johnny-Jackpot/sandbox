@@ -127,6 +127,16 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/reusability',
+      children: [
+        {
+          path: 'composables',
+          name: 'composables',
+          component: () => import('@/views/reusability/Composables.vue'),
+        },
+      ],
+    },
   ],
 })
 
