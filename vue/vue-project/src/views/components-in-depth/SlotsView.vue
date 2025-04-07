@@ -4,6 +4,7 @@ import FancyButton from '@/components/slots/FancyButton.vue';
 import TemplateComponent from '@/components/slots/TemplateComponent.vue';
 import ScopedSlotComponent from '../../components/slots/ScopedSlotComponent.vue';
 import NamedScopedSlotComponent from '@/components/slots/NamedScopedSlotComponent.vue';
+import FancyList from '@/components/slots/FancyList.vue';
 
 const buttonTitle = 'Click me';
 const headerSlotName = 'header';
@@ -91,4 +92,12 @@ const headerSlotName = 'header';
       Another slot: {{ anotherSlotProps.count }}
     </template>
   </NamedScopedSlotComponent>
+  <FancyList :api-url="'test'" :per-page="20">
+    <template #item="{ body, username, likes }">
+      <div>
+        <p>{{ body }}</p>
+        <p>by {{ username }} | {{ likes }}</p>
+      </div>
+    </template>
+  </FancyList>
 </template>
