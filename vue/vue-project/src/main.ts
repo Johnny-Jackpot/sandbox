@@ -27,4 +27,10 @@ app.config.errorHandler = (err, vm, info) => {
 
 app.provide(appMessage, 'App level hello world')
 
+app.directive('green', {
+  mounted: (el: HTMLElement) => {
+    el.classList.add('green')
+  },
+})
+
 app.mount('#app')
