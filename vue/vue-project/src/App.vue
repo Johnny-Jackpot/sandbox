@@ -34,6 +34,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/components-in-depth/provide-inject">provide-inject</RouterLink>
         <RouterLink to="/components-in-depth/async-components">async-components</RouterLink>
         <RouterLink to="/reusability/composables">composables</RouterLink>
+        <RouterLink to="/reusability/custom-directives">custom-directives</RouterLink>
       </nav>
     </div>
   </header>

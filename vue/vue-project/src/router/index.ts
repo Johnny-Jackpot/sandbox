@@ -133,7 +133,12 @@ const router = createRouter({
         {
           path: 'composables',
           name: 'composables',
-          component: () => import('@/views/reusability/Composables.vue'),
+          component: () => import('@/views/reusability/ComposablesView.vue'),
+        },
+        {
+          path: 'custom-directives',
+          name: 'custom-directives',
+          component: () => import('@/views/reusability/CustomDirectivesView.vue'),
         },
       ],
     },
