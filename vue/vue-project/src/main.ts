@@ -8,6 +8,9 @@ import router from './router'
 import GlobalComponent from './components/components-in-depth/registration/GlobalComponent.vue'
 import { appMessage } from './main-inject-keys'
 
+import i18n from './plugins/i18n'
+import { messages } from './plugins/messages'
+
 const app = createApp(App)
 
 app.component('GlobalComponent', GlobalComponent)
@@ -32,5 +35,7 @@ app.directive('green', {
     el.classList.add('green')
   },
 })
+
+app.use(i18n, messages)
 
 app.mount('#app')

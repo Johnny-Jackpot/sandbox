@@ -140,6 +140,11 @@ const router = createRouter({
           name: 'custom-directives',
           component: () => import('@/views/reusability/CustomDirectivesView.vue'),
         },
+        {
+          path: 'plugins',
+          name: 'plugins',
+          component: () => import('@/views/reusability/PluginsView.vue'),
+        },
       ],
     },
   ],

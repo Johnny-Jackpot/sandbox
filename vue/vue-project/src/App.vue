@@ -35,6 +35,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/components-in-depth/async-components">async-components</RouterLink>
         <RouterLink to="/reusability/composables">composables</RouterLink>
         <RouterLink to="/reusability/custom-directives">custom-directives</RouterLink>
+        <RouterLink to="/reusability/plugins">plugins</RouterLink>
       </nav>
     </div>
   </header>
