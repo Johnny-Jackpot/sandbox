@@ -6,21 +6,25 @@ import JavascriptHooks from '@/components/build-in-components/transition/Javascr
 import NestedTransitions from '@/components/build-in-components/transition/NestedTransitions.vue';
 import TransitionBasicUsage from '@/components/build-in-components/transition/TransitionBasicUsage.vue';
 import TransitionBetweenElements from '@/components/build-in-components/transition/TransitionBetweenElements.vue';
+import TransitionsBetweenComponents from '@/components/build-in-components/transition/TransitionsBetweenComponents.vue';
 
 const show = ref(true)
 
 </script>
 
 <template>
-  <h1>Transition</h1>
-  <button @click="show = !show">Toggle</button>
-  <JavascriptHooks>
-    <div v-if="show" class="gsap-box"></div>
-  </JavascriptHooks>
-  <TransitionBasicUsage />
-  <CssBasedTransitions />
-  <NestedTransitions />
-  <TransitionBetweenElements />
+  <div style="margin-bottom: 100px;">
+    <h1>Transition</h1>
+    <button @click="show = !show">Toggle</button>
+    <JavascriptHooks>
+      <div v-if="show" class="gsap-box"></div>
+    </JavascriptHooks>
+    <TransitionBasicUsage />
+    <CssBasedTransitions />
+    <NestedTransitions />
+    <TransitionBetweenElements />
+    <TransitionsBetweenComponents />
+  </div>
 </template>
 
 <style scoped>
