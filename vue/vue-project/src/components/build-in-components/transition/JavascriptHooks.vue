@@ -1,28 +1,58 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import gsap from 'gsap';
 
 const show = ref(true)
 
 
 function onBeforeEnter(el: Element): void {
-  console.log('onBeforeEnter', el);
+  gsap.set(el, {
+    scale: 0.25,
+    opacity: 1,
+  })
 }
 
 function onEnter(el: Element, done: () => void): void {
-  console.log('onEnter', el)
-  done()
+  gsap.to(el, {
+    duration: 1,
+    scale: 1,
+    opacity: 1,
+    ease: 'elastic.inOut(2.5, 1)',
+    onComplete: done
+  })
 }
 
-function onAfterEnter(el: Element) {
-  console.log('onAfterEnter', el)
+function onLeave(el: Element, done: () => void): void {
+  gsap.to(el, {
+    duration: 0.7,
+    scale: 1,
+    x: 300,
+    ease: 'elastic.inOut(2.5, 1)',
+  })
+  gsap.to(el, {
+    duration: 0.2,
+    delay: 0.5,
+    opacity: 0,
+    onComplete: done,
+  })
 }
+
+
 </script>
 
 <template>
   <button @click="show = !show">Toggle</button>
-  <Transition :css="false" @before-enter="onBeforeEnter" @enter="onEnter" @after-enter="onAfterEnter">
-    <p v-if="show">Hello world</p>
+  <Transition @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
+    <div class="gsap-box" v-if="show"></div>
   </Transition>
 </template>
 
-<style scoped></style>
+<style scoped>
+.gsap-box {
+  background: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 20px;
+}
+</style>
