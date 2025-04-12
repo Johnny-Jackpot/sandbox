@@ -12,7 +12,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
       <nav>
         <RouterLink v-for="route in $router.getRoutes()" :to="route.path" :key="route.path">
-          {{ route.name }}
+          {{ route.meta?.title || route.name }}
         </RouterLink>
       </nav>
     </div>
