@@ -38,7 +38,7 @@ function onLeave(el: Element, done: () => void): void {
 </script>
 
 <template>
-  <Transition @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
+  <Transition appear @before-enter="onBeforeEnter" @enter="onEnter" @leave="onLeave">
     <slot></slot>
   </Transition>
 </template>
