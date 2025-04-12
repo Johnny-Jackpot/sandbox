@@ -7,6 +7,7 @@ import NestedTransitions from '@/components/build-in-components/transition/Neste
 import TransitionBasicUsage from '@/components/build-in-components/transition/TransitionBasicUsage.vue';
 import TransitionBetweenElements from '@/components/build-in-components/transition/TransitionBetweenElements.vue';
 import TransitionsBetweenComponents from '@/components/build-in-components/transition/TransitionsBetweenComponents.vue';
+import TransitionWithKeyAttr from '@/components/build-in-components/transition/TransitionWithKeyAttr.vue';
 
 const show = ref(true)
 
@@ -24,6 +25,7 @@ const show = ref(true)
     <NestedTransitions />
     <TransitionBetweenElements />
     <TransitionsBetweenComponents />
+    <TransitionWithKeyAttr />
   </div>
 </template>
 
