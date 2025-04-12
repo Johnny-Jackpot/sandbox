@@ -11,5 +11,13 @@ export const builtInComponentsRoutes: RouteRecordRaw = {
         title: 'Transition',
       },
     },
+    {
+      path: 'transition-group',
+      name: 'transition-group',
+      component: () => import('@/views/build-in-components/TransitionGroupView.vue'),
+      meta: {
+        title: 'Transition Group',
+      },
+    },
   ],
 }
