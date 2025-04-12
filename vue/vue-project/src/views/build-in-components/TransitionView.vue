@@ -12,13 +12,14 @@ const show = ref(true)
 
 <template>
   <h1>Transition</h1>
-  <TransitionBasicUsage />
-  <CssBasedTransitions />
-  <NestedTransitions />
   <button @click="show = !show">Toggle</button>
   <JavascriptHooks>
     <div v-if="show" class="gsap-box"></div>
   </JavascriptHooks>
+  <TransitionBasicUsage />
+  <CssBasedTransitions />
+  <NestedTransitions />
+
 </template>
 
 <style scoped>
