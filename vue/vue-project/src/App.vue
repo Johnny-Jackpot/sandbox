@@ -5,37 +5,15 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
+      <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/introduction">Introduction</RouterLink>
-        <RouterLink to="/essentials/template-syntax">template-syntax</RouterLink>
-        <RouterLink to="/essentials/reactivity-fundamentals">reactivity-fundamentals</RouterLink>
-        <RouterLink to="/essentials/computed-properties">reactivity-fundamentals</RouterLink>
-        <RouterLink to="/essentials/class-and-style-bindings">class-and-style-bindings</RouterLink>
-        <RouterLink to="/essentials/conditional-rendering">conditional-rendering</RouterLink>
-        <RouterLink to="/essentials/list-rendering">list-rendering</RouterLink>
-        <RouterLink to="/essentials/event-handling">event-handling</RouterLink>
-        <RouterLink to="/essentials/form-input-bindings">form-input-bindings</RouterLink>
-        <RouterLink to="/essentials/watchers">watchers</RouterLink>
-        <RouterLink to="/essentials/template-refs">template-refs</RouterLink>
-        <RouterLink to="/essentials/components-basics">components-basics</RouterLink>
-        <RouterLink to="/essentials/lifecycle-hooks">lifecycle-hooks</RouterLink>
-        <RouterLink to="/components-in-depth/props">props</RouterLink>
-        <RouterLink to="/components-in-depth/events">events</RouterLink>
-        <RouterLink to="/components-in-depth/component-v-model">component-v-model</RouterLink>
-        <RouterLink to="/components-in-depth/fallthrough-attributes">fallthrough-attributes</RouterLink>
-        <RouterLink to="/components-in-depth/slots">slots</RouterLink>
-        <RouterLink to="/components-in-depth/provide-inject">provide-inject</RouterLink>
-        <RouterLink to="/components-in-depth/async-components">async-components</RouterLink>
-        <RouterLink to="/reusability/composables">composables</RouterLink>
-        <RouterLink to="/reusability/custom-directives">custom-directives</RouterLink>
-        <RouterLink to="/reusability/plugins">plugins</RouterLink>
+        <RouterLink v-for="route in $router.getRoutes()" :to="route.path" :key="route.path">
+          {{ route.name }}
+        </RouterLink>
       </nav>
     </div>
   </header>
