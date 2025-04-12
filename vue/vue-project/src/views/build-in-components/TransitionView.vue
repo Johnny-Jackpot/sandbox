@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CssBasedTransitions from '@/components/build-in-components/transition/CssBasedTransitions.vue';
+import NestedTransitions from '@/components/build-in-components/transition/NestedTransitions.vue';
 import TransitionBasicUsage from '@/components/build-in-components/transition/TransitionBasicUsage.vue';
 
 
@@ -9,4 +10,5 @@ import TransitionBasicUsage from '@/components/build-in-components/transition/Tr
   <h1>Transition</h1>
   <TransitionBasicUsage />
   <CssBasedTransitions />
+  <NestedTransitions />
 </template>
