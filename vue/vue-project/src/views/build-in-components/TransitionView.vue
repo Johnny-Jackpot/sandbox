@@ -5,6 +5,7 @@ import CssBasedTransitions from '@/components/build-in-components/transition/Css
 import JavascriptHooks from '@/components/build-in-components/transition/JavascriptHooks.vue';
 import NestedTransitions from '@/components/build-in-components/transition/NestedTransitions.vue';
 import TransitionBasicUsage from '@/components/build-in-components/transition/TransitionBasicUsage.vue';
+import TransitionBetweenElements from '@/components/build-in-components/transition/TransitionBetweenElements.vue';
 
 const show = ref(true)
 
@@ -19,7 +20,7 @@ const show = ref(true)
   <TransitionBasicUsage />
   <CssBasedTransitions />
   <NestedTransitions />
-
+  <TransitionBetweenElements />
 </template>
 
 <style scoped>
