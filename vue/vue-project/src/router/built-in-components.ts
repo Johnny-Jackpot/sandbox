@@ -27,5 +27,13 @@ export const builtInComponentsRoutes: RouteRecordRaw = {
         title: 'Keep alive',
       },
     },
+    {
+      path: 'teleport',
+      name: 'teleport',
+      component: () => import('@/views/build-in-components/TeleportView.vue'),
+      meta: {
+        title: 'Teleport',
+      },
+    },
   ],
 }
