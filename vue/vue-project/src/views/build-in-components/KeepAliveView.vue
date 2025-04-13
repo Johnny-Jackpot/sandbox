@@ -21,7 +21,10 @@ const activeComp = shallowRef(CompA)
   <label><input type="radio" v-model="activeComp" :value="CompE"> E</label><br />
   <label><input type="radio" v-model="activeComp" :value="CompF"> F</label><br />
   <label><input type="radio" v-model="activeComp" :value="CompG"> G</label>
-  <KeepAlive>
+  <KeepAlive :include="['CompA', 'CompB']">
+    <component :is="activeComp" />
+  </KeepAlive>
+  <KeepAlive :max="3">
     <component :is="activeComp" />
   </KeepAlive>
 </template>

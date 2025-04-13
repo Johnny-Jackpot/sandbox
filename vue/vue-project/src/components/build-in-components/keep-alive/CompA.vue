@@ -1,7 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onActivated, onDeactivated, ref } from 'vue';
 
 const count = ref(1)
+
+onActivated(() => {
+  console.log('Activated')
+
+})
+
+onDeactivated(() => {
+  console.log('Deactivated')
+})
 </script>
 
 <template>
