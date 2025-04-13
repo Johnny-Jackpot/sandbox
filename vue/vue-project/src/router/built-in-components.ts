@@ -19,5 +19,13 @@ export const builtInComponentsRoutes: RouteRecordRaw = {
         title: 'Transition Group',
       },
     },
+    {
+      path: 'keep-alive',
+      name: 'keep-alive',
+      component: () => import('@/views/build-in-components/KeepAliveView.vue'),
+      meta: {
+        title: 'Keep alive',
+      },
+    },
   ],
 }
