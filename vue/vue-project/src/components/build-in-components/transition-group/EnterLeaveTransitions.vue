@@ -33,9 +33,14 @@ function reset() {
 </template>
 
 <style scoped>
+.list-move,
 .list-enter-active,
 .list-leave-active {
   transition: all 0.5s ease;
+}
+
+.list-leave-active {
+  position: absolute;
 }
 
 .list-enter-from,
