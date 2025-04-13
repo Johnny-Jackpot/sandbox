@@ -7,6 +7,8 @@ import Modal from '@/components/build-in-components/teleport/Modal.vue';
   <h1>Teleport</h1>
   <div class="outer">
     <Modal />
+    <Modal />
+    <Modal />
   </div>
 </template>
 
