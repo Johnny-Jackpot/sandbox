@@ -5,6 +5,7 @@ import { essentialsRoutes } from './essentials'
 import { componentsInDepthRoutes } from './components-in-depth'
 import { reusabilityRoutes } from './reusability'
 import { builtInComponentsRoutes } from './built-in-components'
+import { scalingUpRoutes } from './scaling-up'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +32,7 @@ const router = createRouter({
     componentsInDepthRoutes,
     reusabilityRoutes,
     builtInComponentsRoutes,
+    scalingUpRoutes,
   ],
 })
 
