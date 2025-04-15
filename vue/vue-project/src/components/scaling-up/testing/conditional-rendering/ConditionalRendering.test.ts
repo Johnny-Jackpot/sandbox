@@ -15,4 +15,13 @@ describe('Conditional rendering component', () => {
     const wrapper = mount(ConditionalRendering)
     expect(wrapper.find('#admin').exists()).toBe(false)
   })
+
+  test('Renders admin link', async () => {
+    const wrapper = mount(ConditionalRendering)
+
+    await wrapper.get('button').trigger('click')
+
+    expect(wrapper.find('#admin').exists()).toBe(true)
+    expect(wrapper.get('#admin').text()).toEqual('Admin')
+  })
 })
