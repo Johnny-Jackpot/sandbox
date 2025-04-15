@@ -24,4 +24,10 @@ describe('Conditional rendering component', () => {
     expect(wrapper.find('#admin').exists()).toBe(true)
     expect(wrapper.get('#admin').text()).toEqual('Admin')
   })
+
+  test('Hidden admin link exists in DOM but not shown', () => {
+    const wrapper = mount(ConditionalRendering)
+
+    expect(wrapper.get('#admin-v-show').isVisible()).toBe(false)
+  })
 })
