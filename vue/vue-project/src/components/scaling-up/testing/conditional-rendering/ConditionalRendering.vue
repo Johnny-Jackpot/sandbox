@@ -9,6 +9,7 @@ const admin = ref(false)
   <nav>
     <a id="profile" href="/profile">My profile</a>
     <a v-if="admin" id="admin" href="/admin">Admin</a>
+    <a v-show="admin" id="admin-v-show" href="/admin">Admin</a>
   </nav>
 </template>
 
