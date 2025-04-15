@@ -11,7 +11,11 @@ const todos = ref([
 </script>
 
 <template>
-  <div></div>
+  <ul>
+    <li v-for="todo in todos" :key="todo.id" data-test="todo">
+      {{ todo.text }}
+    </li>
+  </ul>
 </template>
 
 <style scoped></style>
