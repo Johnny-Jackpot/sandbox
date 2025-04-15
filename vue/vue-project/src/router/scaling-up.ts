@@ -11,5 +11,13 @@ export const scalingUpRoutes: RouteRecordRaw = {
         title: 'State Management',
       },
     },
+    {
+      path: 'vue-test-utils-crash-course',
+      name: 'vue-test-utils-crash-course',
+      component: () => import('@/views/scaling-up/VueTestUtilsCrashCourse.vue'),
+      meta: {
+        title: 'Vue Test Utils Crash Course',
+      },
+    },
   ],
 }
