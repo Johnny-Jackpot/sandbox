@@ -24,10 +24,15 @@ function createTodo() {
     <input type="text" data-test="new-todo" v-model="newTodo" />
   </form>
   <ul>
-    <li v-for="todo in todos" :key="todo.id" data-test="todo">
+    <li v-for="todo in todos" :key="todo.id" data-test="todo" :class="[todo.completed ? 'completed' : '']">
       {{ todo.text }}
+      <input type="checkbox" v-model="todo.completed" data-test="todo-checkbox" />
     </li>
   </ul>
 </template>
 
-<style scoped></style>
+<style scoped>
+.completed {
+  text-decoration: line-through;
+}
+</style>
