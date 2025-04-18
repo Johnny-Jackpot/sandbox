@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-interface FormFields {
+export interface FormFields {
   email: string;
   description: string;
   city: string;
@@ -10,7 +10,7 @@ interface FormFields {
 }
 
 const emit = defineEmits<{
-  sumbit: [FormFields]
+  submit: [FormFields]
 }>()
 
 const form = ref<FormFields>({
@@ -21,14 +21,14 @@ const form = ref<FormFields>({
   interval: ''
 })
 
-const sumbit = () => {
-  emit('sumbit', form.value)
+const submit = () => {
+  emit('submit', { ...form.value })
 }
 </script>
 
 <template>
-  <form @submit.prevent="sumbit">
-    <input type="text" v-model="form.email">
+  <form @submit.prevent="submit">
+    <input type="email" v-model="form.email">
 
     <textarea v-model="form.description"></textarea>
 
