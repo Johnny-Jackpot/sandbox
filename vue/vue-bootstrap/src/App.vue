@@ -4,11 +4,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <nav>
-      <RouterLink v-for="route in $router.getRoutes()" :to="route.path" :key="route.path">
-        {{ route.meta?.title || route.name }}
-      </RouterLink>
-    </nav>
+    <ul class="nav nav-pills">
+      <li class="nav-item" v-for="route in $router.getRoutes()" :key="route.path">
+        <RouterLink :to="route.path" class="nav-link" activeClass="active">
+          {{ route.meta?.title || route.name }}
+        </RouterLink>
+      </li>
+    </ul>
   </header>
   <RouterView />
 </template>
