@@ -14,15 +14,16 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.5",
     "gsap": "^3.12.7",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.5"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
+    "@types/bootstrap": "^5.2.10",
     "@types/node": "^22.13.4",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/eslint-config-prettier": "^10.2.0",
@@ -35,9 +36,9 @@
     "jsdom": "^26.1.0",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.1",
-    "typescript": "~5.7.3",
     "sass": "^1.86.3",
     "sass-loader": "^16.0.5",
+    "typescript": "~5.7.3",
     "vite": "^6.1.0",
     "vite-plugin-svg-sprite": "^0.6.2",
     "vite-plugin-vue-devtools": "^7.7.2",
