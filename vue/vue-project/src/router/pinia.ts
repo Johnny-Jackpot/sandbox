@@ -19,5 +19,13 @@ export const piniaRoutes: RouteRecordRaw = {
         title: 'Defining Store',
       },
     },
+    {
+      path: 'state',
+      name: 'state',
+      component: () => import('@/views/pinia/StateView.vue'),
+      meta: {
+        title: 'State',
+      },
+    },
   ],
 }
