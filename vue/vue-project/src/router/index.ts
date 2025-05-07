@@ -6,6 +6,7 @@ import { componentsInDepthRoutes } from './components-in-depth'
 import { reusabilityRoutes } from './reusability'
 import { builtInComponentsRoutes } from './built-in-components'
 import { scalingUpRoutes } from './scaling-up'
+import { piniaRoutes } from './pinia'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +34,7 @@ const router = createRouter({
     reusabilityRoutes,
     builtInComponentsRoutes,
     scalingUpRoutes,
+    piniaRoutes,
   ],
 })
 
