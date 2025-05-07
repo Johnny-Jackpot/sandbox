@@ -11,5 +11,13 @@ export const piniaRoutes: RouteRecordRaw = {
         title: 'Pinia Getting Started',
       },
     },
+    {
+      path: 'defining-store',
+      name: 'defining-store',
+      component: () => import('@/views/pinia/DefiningStoreView.vue'),
+      meta: {
+        title: 'Defining Store',
+      },
+    },
   ],
 }
