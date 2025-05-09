@@ -27,5 +27,13 @@ export const piniaRoutes: RouteRecordRaw = {
         title: 'State',
       },
     },
+    {
+      path: 'getters',
+      name: 'getters',
+      component: () => import('@/views/pinia/GettersView.vue'),
+      meta: {
+        title: 'Getters',
+      },
+    },
   ],
 }
