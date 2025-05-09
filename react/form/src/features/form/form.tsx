@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useUpdateUser, useUser } from "./api";
 import { z } from "zod";
+import { useForm } from "./use-form";
 
 const initialFormState: FormData = {
   name: "",
@@ -20,49 +21,25 @@ export function UserForm({ id }: { id: string }) {
   const userQuery = useUser(id);
   const updateUserMutation = useUpdateUser();
 
-  const [userFormData, setUserFormData] = useState<Partial<FormData>>({});
-  const [showErrors, setShowErrors] = useState(false);
+  const { formData, setFormData, errors, reset, isDirty, handleSubmit } =
+    useForm<FormData>({
+      initialFormState,
+      backendData: userQuery.data,
+      validateSchema: formDataSchema,
+    });
 
-  const formData = {
-    ...initialFormState,
-    ...userQuery.data,
-    ...userFormData,
-  };
-
-  const reset = () => setUserFormData({});
-
-  const isDirty = Object.entries(userFormData).some(
-    ([key, value]) => userQuery.data?.[key as keyof FormData] !== value,
-  );
-
-  const validate = () => {
-    const res = formDataSchema.safeParse(formData);
-
-    return res.success ? undefined : res.error.format();
-  };
-
-  const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const errors = validate();
-    if (errors) {
-      setShowErrors(true);
-      return;
-    }
-
+  const onSubmit = async (values: FormData) => {
     await updateUserMutation.mutateAsync({
       id,
-      ...formData,
+      ...values,
     });
   };
-
-  const errors = showErrors ? validate() : undefined;
 
   return (
     <div className="max-w-4xl mx-auto p-6">
       <form
         className="mb-8 bg-white rounded-lg shadow-md p-6"
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
@@ -74,7 +51,7 @@ export function UserForm({ id }: { id: string }) {
             name="name"
             value={formData.name}
             onChange={(e) => {
-              setUserFormData((state) => ({ ...state, name: e.target.value }));
+              setFormData((state) => ({ ...state, name: e.target.value }));
             }}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
@@ -92,7 +69,7 @@ export function UserForm({ id }: { id: string }) {
             name="email"
             value={formData.email}
             onChange={(e) => {
-              setUserFormData((state) => ({ ...state, email: e.target.value }));
+              setFormData((state) => ({ ...state, email: e.target.value }));
             }}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
@@ -112,7 +89,7 @@ export function UserForm({ id }: { id: string }) {
             name="phone"
             value={formData.phone}
             onChange={(e) => {
-              setUserFormData((state) => ({ ...state, phone: e.target.value }));
+              setFormData((state) => ({ ...state, phone: e.target.value }));
             }}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
