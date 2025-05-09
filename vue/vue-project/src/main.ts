@@ -21,7 +21,21 @@ app.component(
   ),
 )
 
-app.use(createPinia())
+const pinia = createPinia()
+
+declare module 'pinia' {
+  export interface PiniaCustomProperties {
+    secret: string
+  }
+}
+
+function piniaPlugin() {
+  return { secret: 'Hello world!' }
+}
+
+pinia.use(piniaPlugin)
+
+app.use(pinia)
 app.use(router)
 
 app.config.errorHandler = (err, vm, info) => {

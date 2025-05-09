@@ -35,4 +35,5 @@ counterStore.$onAction(({ name, store, args, after, onError }) => {
     <button @click="counterStore.errorAction()">Trigger error</button>
     <button @click="counterStore.$reset()">Reset</button>
   </div>
+  <p>Pinia plugin val: {{ counterStore.secret }}</p>
 </template>
