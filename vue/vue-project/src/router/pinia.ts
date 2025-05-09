@@ -35,5 +35,13 @@ export const piniaRoutes: RouteRecordRaw = {
         title: 'Getters',
       },
     },
+    {
+      path: 'actions',
+      name: 'actions',
+      component: () => import('@/views/pinia/ActionsView.vue'),
+      meta: {
+        title: 'Actions',
+      },
+    },
   ],
 }
