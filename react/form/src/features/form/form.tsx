@@ -2,13 +2,44 @@ import React, { useState } from "react";
 import { useUpdateUser, useUser } from "./api";
 import { z } from "zod";
 
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+};
+
+const initialFormState: FormData = {
+  name: "",
+  email: "",
+  phone: "",
+};
+
 export function UserForm({ id }: { id: string }) {
   const userQuery = useUser(id);
   const updateUserMutation = useUpdateUser();
 
+  const [userFormData, setUserFormData] = useState<Partial<FormData>>({});
+
   const handleSubmit = async (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    await updateUserMutation.mutateAsync({
+      id,
+      ...formData,
+    });
   };
+
+  const formData = {
+    ...initialFormState,
+    ...userQuery.data,
+    ...userFormData,
+  };
+
+  const reset = () => setUserFormData({});
+
+  const isDirty = Object.entries(userFormData).some(
+    ([key, value]) => userQuery.data?.[key as keyof FormData] !== value,
+  );
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -24,6 +55,10 @@ export function UserForm({ id }: { id: string }) {
             type="text"
             id="name"
             name="name"
+            value={formData.name}
+            onChange={(e) => {
+              setUserFormData((state) => ({ ...state, name: e.target.value }));
+            }}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
@@ -37,6 +72,10 @@ export function UserForm({ id }: { id: string }) {
             type="email"
             id="email"
             name="email"
+            value={formData.email}
+            onChange={(e) => {
+              setUserFormData((state) => ({ ...state, email: e.target.value }));
+            }}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
@@ -50,6 +89,10 @@ export function UserForm({ id }: { id: string }) {
             type="tel"
             id="phone"
             name="phone"
+            value={formData.phone}
+            onChange={(e) => {
+              setUserFormData((state) => ({ ...state, phone: e.target.value }));
+            }}
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
@@ -64,7 +107,8 @@ export function UserForm({ id }: { id: string }) {
         </button>
         <button
           type="button"
-          disabled={userQuery.isPending}
+          disabled={!isDirty || userQuery.isPending}
+          onClick={reset}
           className="w-full bg-red-500 mt-2 text-white py-2 px-4 rounded-lg shadow-sm shadow-red-500 hover:bg-red-600 transition-colors disabled:opacity-50"
         >
           Reset
