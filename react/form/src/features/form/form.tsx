@@ -1,4 +1,3 @@
-import React from "react";
 import { useUpdateUser, useUser } from "./api";
 import { z } from "zod";
 import { useForm } from "./use-form";
