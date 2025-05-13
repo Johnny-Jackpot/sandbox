@@ -1,6 +1,6 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { useCounterStore } from './counter'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, test, vi } from 'vitest'
 
 describe('Counter Store AI generated tests', () => {
   beforeEach(() => {
@@ -35,5 +35,18 @@ describe('Counter Store AI generated tests', () => {
   it('should throw an error in errorAction', () => {
     const counterStore = useCounterStore()
     expect(() => counterStore.errorAction()).toThrow('Error action')
+  })
+})
+
+describe('Counter Store manual written tests', () => {
+  beforeEach(() => {
+    setActivePinia(createPinia())
+  })
+
+  test('increments', () => {
+    const counter = useCounterStore()
+    expect(counter.count).toBe(0)
+    counter.increment()
+    expect(counter.count).toBe(1)
   })
 })
