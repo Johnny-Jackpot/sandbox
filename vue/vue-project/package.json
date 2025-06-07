@@ -14,10 +14,14 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.8",
+    "@tanstack/vue-query": "^5.80.6",
     "gsap": "^3.12.7",
     "pinia": "^3.0.1",
+    "tailwindcss": "^4.1.8",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "zod": "^3.25.56"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",

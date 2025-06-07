@@ -3,6 +3,8 @@ import './assets/main.css'
 import { createApp, defineAsyncComponent } from 'vue'
 import { createPinia } from 'pinia'
 
+import { VueQueryPlugin } from '@tanstack/vue-query'
+
 import App from './App.vue'
 import router from './router'
 import GlobalComponent from './components/components-in-depth/registration/GlobalComponent.vue'
@@ -12,6 +14,8 @@ import i18n from './plugins/i18n'
 import { messages } from './plugins/messages'
 
 const app = createApp(App)
+
+app.use(VueQueryPlugin)
 
 app.component('GlobalComponent', GlobalComponent)
 app.component(

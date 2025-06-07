@@ -7,6 +7,7 @@ import { reusabilityRoutes } from './reusability'
 import { builtInComponentsRoutes } from './built-in-components'
 import { scalingUpRoutes } from './scaling-up'
 import { piniaRoutes } from './pinia'
+import { formRoutes } from './form'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,7 @@ const router = createRouter({
     builtInComponentsRoutes,
     scalingUpRoutes,
     piniaRoutes,
+    formRoutes,
   ],
 })
 
