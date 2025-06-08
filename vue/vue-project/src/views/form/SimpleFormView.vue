@@ -20,7 +20,7 @@ const initialFormState: FormData = {
 const { data, isLoading, isError } = useUser('1');
 const { formData, errors, reset, handleSubmit } = useForm<FormData>({
   initialFormState,
-  backendData: data,
+  defferedInitialFormState: data,
   validateSchema: formDataSchema
 })
 
@@ -32,7 +32,7 @@ const onSubmit = handleSubmit((values: FormData) => {
 
 <template>
   <div className="max-w-4xl mx-auto p-6">
-    <form className="mb-8 bg-white rounded-lg shadow-md p-6" @submit="onSubmit">
+    <form className="mb-8 bg-white rounded-lg shadow-md p-6" @submit.prevent="onSubmit">
       <div className="mb-4">
         <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
           Name

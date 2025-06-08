@@ -3,20 +3,20 @@ import { z } from 'zod'
 
 export function useForm<FormDataT>({
   initialFormState,
-  backendData,
+  defferedInitialFormState,
   validateSchema,
 }: {
   initialFormState: FormDataT
-  backendData?: Ref<Partial<FormDataT>> | Ref<undefined>
+  defferedInitialFormState?: Ref<Partial<FormDataT>> | Ref<undefined>
   validateSchema?: z.ZodObject<{
     [K in keyof FormDataT]: z.ZodType<FormDataT[K]>
   }>
 }) {
   const formData = ref<FormDataT>({ ...initialFormState })
   const showErrors = ref<boolean>(false)
-
+  const errors = computed(() => (showErrors.value ? validate() : undefined))
   watch(
-    () => backendData?.value,
+    () => defferedInitialFormState?.value,
     (newData) => {
       if (newData) {
         formData.value = { ...formData.value, ...newData }
@@ -24,7 +24,7 @@ export function useForm<FormDataT>({
     },
   )
 
-  const validate = () => {
+  function validate() {
     if (!validateSchema) {
       return
     }
@@ -34,19 +34,13 @@ export function useForm<FormDataT>({
     return res.success ? undefined : res.error.format()
   }
 
-  const errors = computed(() => (showErrors.value ? validate() : undefined))
-
-  const reset = () => {
-    formData.value = { ...initialFormState, ...(backendData?.value || {}) }
+  function reset() {
+    formData.value = { ...initialFormState, ...(defferedInitialFormState?.value || {}) }
     showErrors.value = false
   }
 
-  type OnSubmit = (values: FormDataT) => void
-
-  const handleSubmit = (onSubmit: OnSubmit) => {
-    return async (e: Event) => {
-      e.preventDefault()
-
+  function handleSubmit(onSubmit: (values: FormDataT) => void) {
+    return () => {
       const errors = validate()
       if (errors) {
         showErrors.value = true
