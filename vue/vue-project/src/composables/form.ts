@@ -15,6 +15,13 @@ export function useForm<FormDataT>({
   const formData = ref<FormDataT>({ ...initialFormState })
   const showErrors = ref<boolean>(false)
   const errors = computed(() => (showErrors.value ? validate() : undefined))
+  const isDirty = computed(() =>
+    Object.entries(formData.value).some(
+      ([key, value]) =>
+        (defferedInitialFormState?.value || initialFormState)?.[key as keyof FormDataT] !== value,
+    ),
+  )
+
   watch(
     () => defferedInitialFormState?.value,
     (newData) => {
@@ -54,6 +61,7 @@ export function useForm<FormDataT>({
   return {
     formData,
     errors,
+    isDirty,
     reset,
     handleSubmit,
   }

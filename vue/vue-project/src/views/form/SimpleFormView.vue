@@ -18,7 +18,7 @@ const initialFormState: FormData = {
 };
 
 const { data, isLoading, isError } = useUser('1');
-const { formData, errors, reset, handleSubmit } = useForm<FormData>({
+const { formData, errors, isDirty, reset, handleSubmit } = useForm<FormData>({
   initialFormState,
   defferedInitialFormState: data,
   validateSchema: formDataSchema
@@ -64,7 +64,7 @@ const onSubmit = handleSubmit((values: FormData) => {
         </div>
       </div>
 
-      <button type="submit"
+      <button type="submit" :disabled="!isDirty || isLoading"
         className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg shadow-sm shadow-blue-500 hover:bg-blue-600 transition-colors disabled:opacity-50">
         Update User
       </button>
