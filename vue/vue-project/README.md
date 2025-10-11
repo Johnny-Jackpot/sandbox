@@ -1,39 +1,11 @@
-# vue-project
+This is my sandbox project where I follow along with Vue 3 + Pinia documentation and try things out in code. It’s a live experiment: I read, apply, break things, and learn.
 
-This template should help get you started developing with Vue 3 in Vite.
+🎯 Purpose & Goals
 
-## Recommended IDE Setup
+To walk through the official Vue 3 docs and experiment with features in a real project
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+To practice state management using Pinia and see how it fits into a Vue 3 app
 
-## Type Support for `.vue` Imports in TS
+To explore common patterns: components, reactivity, composition API, store modules, etc.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-bun install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-bun dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-bun run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-bun lint
-```
+To build small examples as learning aids (rather than a polished app)
