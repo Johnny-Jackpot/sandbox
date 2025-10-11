@@ -1,1 +1,1 @@
-# Design patterns sandbox
+Design patterns sandbox
