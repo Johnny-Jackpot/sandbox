@@ -44,3 +44,18 @@ console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 3));
 console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 1));
 console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 5));
 console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 2));
+
+function findMinimumInRotatedSortedArray(arr: number[]): number {
+  let startIndex = 0;
+  let endIndex = arr.length - 1;
+
+  while (startIndex < endIndex) {
+    const midIndex: number = Math.floor((startIndex + endIndex) / 2);
+    if (arr[midIndex] > arr[endIndex]) startIndex = midIndex + 1;
+    else endIndex = midIndex;
+  }
+
+  return arr[startIndex];
+}
+
+console.log(findMinimumInRotatedSortedArray([3, 4, 5, 1, 2]));
