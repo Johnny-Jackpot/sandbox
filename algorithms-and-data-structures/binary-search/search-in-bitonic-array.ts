@@ -20,30 +20,22 @@ function findIndexInBitonicArray(arr: number[], target: number): number {
   const runSearch = (
     startIndex: number,
     endIndex: number,
-    compareFn: (currentNum: number) => boolean
+    isTargetInRightPart: (currentNum: number) => boolean
   ) => {
     while (startIndex <= endIndex) {
       const midIndex: number = Math.floor((startIndex + endIndex) / 2);
       const currenNum = arr[midIndex];
       if (currenNum === target) return midIndex;
-      if (compareFn(currenNum)) startIndex = midIndex + 1;
+      if (isTargetInRightPart(currenNum)) startIndex = midIndex + 1;
       else endIndex = midIndex - 1;
     }
   };
 
   const peakIndex = findPeakIndex(arr);
 
-  const leftPartStart = 0;
-  const leftPartEnd = peakIndex;
-  const leftPartCompare = (currentNum: number) => currentNum > target;
-
-  const rightPartStart = peakIndex + 1;
-  const rightPartEnd = arr.length - 1;
-  const rightPartCompare = (currentNum: number) => currentNum < target;
-
   return (
-    runSearch(leftPartStart, leftPartEnd, leftPartCompare) ||
-    runSearch(rightPartStart, rightPartEnd, rightPartCompare) ||
+    runSearch(0, peakIndex, (n: number) => n < target) ||
+    runSearch(peakIndex + 1, arr.length - 1, (n: number) => n > target) ||
     -1
   );
 }
