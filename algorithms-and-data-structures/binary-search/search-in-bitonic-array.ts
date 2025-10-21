@@ -47,3 +47,8 @@ function findIndexInBitonicArray(arr: number[], target: number): number {
     -1
   );
 }
+
+console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 3));
+console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 1));
+console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 5));
+console.log(findIndexInBitonicArray([1, 2, 3, 4, 5, 3, 1], 2));
