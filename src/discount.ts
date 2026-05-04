@@ -2,10 +2,11 @@ export const calculateDiscount = (
   originalPrice: number, 
   discountPercentage: number
 ): number => {
-  if (isNaN(originalPrice))     throw new Error('Price must be a valid number');
-  if (originalPrice < 0)        throw new Error('Price cannot be negative');
-  if (discountPercentage > 100) throw new Error('Discount percentage cannot be > 100%');
-  if (discountPercentage < 0)   throw new Error('Discount cannot be negative');
+  if (isNaN(originalPrice))      throw new Error('Price must be a valid number');
+  if (isNaN(discountPercentage)) throw new Error('Discount must be a valid number');
+  if (originalPrice < 0)         throw new Error('Price cannot be negative');
+  if (discountPercentage > 100)  throw new Error('Discount percentage cannot be > 100%');
+  if (discountPercentage < 0)    throw new Error('Discount cannot be negative');
 
   if (discountPercentage === 0) return originalPrice;
 

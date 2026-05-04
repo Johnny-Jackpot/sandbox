@@ -81,4 +81,14 @@ describe('calculateDiscount', () => {
     // Act, Assert
     expect(() => calculateDiscount(originalPrice, discountPercentage)).toThrow('Price must be a valid number');
   });
+  
+  // Requirement #8
+  it('should throw an error for non-numeric discount inputs', () => {
+    // Arrange
+    const originalPrice = 100;
+    const discountPercentage = 'invalid' as any;
+    
+    // Act, Assert
+    expect(() => calculateDiscount(originalPrice, discountPercentage)).toThrow('Discount must be a valid number');
+  });
 });
