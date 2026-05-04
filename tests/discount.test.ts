@@ -61,4 +61,14 @@ describe('calculateDiscount', () => {
     // Act, Assert
     expect(() => calculateDiscount(originalPrice, discountPercentage)).toThrow('Discount percentage cannot be > 100%');
   });
+  
+  // Requirement #6
+  it('should throw an error for discounts less than 0%', () => {
+    // Arrange
+    const originalPrice = 100;
+    const discountPercentage = -10;
+    
+    // Act, Assert
+    expect(() => calculateDiscount(originalPrice, discountPercentage)).toThrow('Discount cannot be negative');
+  });
 });
