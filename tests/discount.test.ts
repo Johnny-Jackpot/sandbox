@@ -40,5 +40,15 @@ describe('calculateDiscount', () => {
 
     // Assert
     expect(result).toBe(expectedDiscountedPrice);
-  });  
+  });
+  
+  // Requirement #4
+  it('should throw an error for negative prices', () => {
+    // Arrange
+    const originalPrice = -50;
+    const discountPercentage = 10;
+
+    // Act, Assert
+    expect(() => calculateDiscount(originalPrice, discountPercentage)).toThrow('Price cannot be negative');
+  });
 });

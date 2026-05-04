@@ -2,6 +2,8 @@ export const calculateDiscount = (
   originalPrice: number, 
   discountPercentage: number
 ): number => {
+  if (originalPrice < 0) throw new Error('Price cannot be negative');
+
   if (discountPercentage === 0) return originalPrice;
 
   const result = originalPrice - originalPrice * discountPercentage / 100;
