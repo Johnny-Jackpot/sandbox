@@ -4,5 +4,7 @@ export const calculateDiscount = (
 ): number => {
   if (discountPercentage === 0) return originalPrice;
 
-  return originalPrice - originalPrice * discountPercentage / 100;
+  const result = originalPrice - originalPrice * discountPercentage / 100;
+
+  return + result.toFixed(2);
 }

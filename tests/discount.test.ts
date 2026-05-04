@@ -27,4 +27,18 @@ describe('calculateDiscount', () => {
     // Assert
     expect(result).toBe(originalPrice);
   });
+  
+  // Requirement #3
+  it('should handle decimal discounts correctly', () => {
+    // Arrange
+    const originalPrice = 100;
+    const discountPercentage = 33.333;
+    const expectedDiscountedPrice = 66.67;
+
+    // Act
+    const result = calculateDiscount(originalPrice, discountPercentage);
+
+    // Assert
+    expect(result).toBe(expectedDiscountedPrice);
+  });  
 });
