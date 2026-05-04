@@ -105,4 +105,18 @@ describe('calculateDiscount', () => {
     // Assert
     expect(result).toBe(expectedDiscountedPrice);
   });
+  
+  // Requirement #10
+  it('should apply minimum discount amount when discount is less than minimum', () => {
+    // Arrange
+    const originalPrice = 100;
+    const discountPercentage = 0.1; // 0.1% discount
+    const expectedDiscountedPrice = 99; // Should apply minimum 1% discount
+
+    // Act
+    const result = calculateDiscount(originalPrice, discountPercentage);
+
+    // Assert
+    expect(result).toBe(expectedDiscountedPrice);
+  });
 });

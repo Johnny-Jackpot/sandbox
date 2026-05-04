@@ -1,4 +1,5 @@
 const minDiscountedPrice = 0.01;
+const minDiscountPercentage = 1;
 
 export const calculateDiscount = (
   originalPrice: number, 
@@ -11,8 +12,8 @@ export const calculateDiscount = (
   if (discountPercentage < 0)    throw new Error('Discount cannot be negative');
 
   if (discountPercentage === 0) return originalPrice;
+  discountPercentage = Math.max(minDiscountPercentage, discountPercentage);
 
   const result = originalPrice - originalPrice * discountPercentage / 100;
-  const formattedResult = + result.toFixed(2);
-  return formattedResult <= minDiscountedPrice ? minDiscountedPrice : formattedResult;
+  return Math.max(+ result.toFixed(2), minDiscountedPrice);
 }
