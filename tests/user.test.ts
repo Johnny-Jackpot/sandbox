@@ -1,4 +1,4 @@
-import { User, fetchUser } from "../src/user";
+import { User, fetchUser } from "../src/User";
 
 describe('User', () => {
   let user: User;
