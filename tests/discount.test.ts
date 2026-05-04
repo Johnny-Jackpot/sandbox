@@ -119,4 +119,18 @@ describe('calculateDiscount', () => {
     // Assert
     expect(result).toBe(expectedDiscountedPrice);
   });
+  
+  // Requirement #11
+  it('should cap the maximum discount amount at $500', () => {
+    // Arrange
+    const originalPrice = 2500;
+    const discountPercentage = 30; // Would normally be $750 off
+    const expectedDiscountedPrice = 2000; // Should only apply $500 maximum discount
+
+    // Act
+    const result = calculateDiscount(originalPrice, discountPercentage);
+
+    // Assert
+    expect(result).toBe(expectedDiscountedPrice);
+  });
 });

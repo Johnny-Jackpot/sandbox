@@ -1,5 +1,6 @@
 const minDiscountedPrice = 0.01;
 const minDiscountPercentage = 1;
+const maxDiscountAmount = 500;
 
 export const calculateDiscount = (
   originalPrice: number, 
@@ -14,6 +15,7 @@ export const calculateDiscount = (
   if (discountPercentage === 0) return originalPrice;
   discountPercentage = Math.max(minDiscountPercentage, discountPercentage);
 
-  const result = originalPrice - originalPrice * discountPercentage / 100;
+  const discountAmount = Math.min(maxDiscountAmount, originalPrice * discountPercentage / 100);
+  const result = originalPrice - discountAmount;
   return Math.max(+ result.toFixed(2), minDiscountedPrice);
 }
