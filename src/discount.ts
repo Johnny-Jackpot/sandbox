@@ -1,3 +1,5 @@
+const minDiscountedPrice = 0.01;
+
 export const calculateDiscount = (
   originalPrice: number, 
   discountPercentage: number
@@ -11,5 +13,6 @@ export const calculateDiscount = (
   if (discountPercentage === 0) return originalPrice;
 
   const result = originalPrice - originalPrice * discountPercentage / 100;
-  return + result.toFixed(2);
+  const formattedResult = + result.toFixed(2);
+  return formattedResult <= minDiscountedPrice ? minDiscountedPrice : formattedResult;
 }

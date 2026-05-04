@@ -91,4 +91,18 @@ describe('calculateDiscount', () => {
     // Act, Assert
     expect(() => calculateDiscount(originalPrice, discountPercentage)).toThrow('Discount must be a valid number');
   });
+  
+  // Requirement #9
+  it('should handle very small prices correctly', () => {
+    // Arrange
+    const originalPrice = 0.001;
+    const discountPercentage = 1;
+    const expectedDiscountedPrice = 0.01; // Should not go below 0.01
+
+    // Act
+    const result = calculateDiscount(originalPrice, discountPercentage);
+
+    // Assert
+    expect(result).toBe(expectedDiscountedPrice);
+  });
 });
