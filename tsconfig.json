@@ -1,5 +1,30 @@
 {
   "compilerOptions": {
-    "types": ["jest"]
-  }
+    "types": ["jest", "node"],
+    /* Target and Environment */
+    "target": "ES2022",                          /* Matches modern Node.js versions */
+    "module": "NodeNext",                        /* Handles modern ESM and CJS flawlessly */
+    "moduleResolution": "NodeNext",              /* Ensures imports resolve correctly in Node */
+    "lib": ["ES2022"],                           /* Standard library features available at runtime */
+
+    /* Type Checking */
+    "strict": true,                              /* Enables all strict type-checking options */
+    "noImplicitAny": true,                       /* Raises error on expressions and declarations with an implied 'any' type */
+    "strictNullChecks": true,                    /* Ensures 'null' and 'undefined' are handled safely */
+    "noUnusedLocals": true,                      /* Reports errors on unused local variables */
+    "noUnusedParameters": true,                  /* Reports errors on unused parameters */
+    "noImplicitReturns": true,                   /* Ensures all code paths in a function return a value */
+    "fallthroughCasesInSwitch": true,            /* Reports errors for fallthrough cases in switch statements */
+
+    /* Interop & Optimization */
+    "esModuleInterop": true,                      /* Emits additional JavaScript to ease importing CommonJS modules */
+    "skipLibCheck": true,                        /* Skip type checking of declaration files (*.d.ts) for speed */
+    "forceConsistentCasingInFileNames": true,    /* Disallows inconsistently-cased references to the same file */
+
+    /* Output Options */
+    "outDir": "./dist",                          /* Redirect output structure to the directory */
+    "sourceMap": true                            /* Generates corresponding '.map' file for debugging */
+  },
+  "include": ["src/**/*"],                       /* Specs where your app code lives */
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"] /* Keeps test files out of your production build */
 }
