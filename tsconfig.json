@@ -23,8 +23,9 @@
 
     /* Output Options */
     "outDir": "./dist",                          /* Redirect output structure to the directory */
+    "rootDir": "./src",
     "sourceMap": true                            /* Generates corresponding '.map' file for debugging */
   },
   "include": ["src/**/*"],                       /* Specs where your app code lives */
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"] /* Keeps test files out of your production build */
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"] /* Keeps test files out of your production build */
 }
