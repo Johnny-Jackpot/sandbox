@@ -4,7 +4,8 @@
     "test-watch": "jest --watchAll",
     "dev": "tsx watch src/index.ts",
     "node-basics:01": "tsx watch src/01-node-basics/01-process-object.ts some-command --fail --crash",
-    "node-basics:02": "tsx watch src/01-node-basics/02-crypto-module.ts"
+    "node-basics:02": "tsx watch src/01-node-basics/02-crypto-module.ts",
+    "node-basics:03": "tsx watch src/01-node-basics/03-os-module.ts"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
