@@ -7,7 +7,8 @@
     "node-basics:02": "tsx watch src/01-node-basics/02-crypto-module.ts",
     "node-basics:03": "tsx watch src/01-node-basics/03-os-module.ts",
     "node-basics:04": "tsx watch src/01-node-basics/04-path-module.ts",
-    "node-basics:05": "tsx watch src/01-node-basics/05-timers-module.ts"
+    "node-basics:05": "tsx watch src/01-node-basics/05-timers-module.ts",
+    "node-basics:06": "tsx watch src/01-node-basics/06-callback-promise-async-await.ts"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
