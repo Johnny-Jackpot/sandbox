@@ -12,7 +12,8 @@
     "node-basics:07": "tsx watch src/01-node-basics/07-fs-module.ts",
     "node-basics:08": "tsx watch src/01-node-basics/08-buffers.ts",
     "node-basics:09": "tsx watch src/01-node-basics/09-url-module.ts",
-    "node-basics:10": "tsx watch src/01-node-basics/10-event-emitter.ts"
+    "node-basics:10": "tsx watch src/01-node-basics/10-event-emitter.ts",
+    "node-basics:11": "tsx watch src/01-node-basics/11-streams.ts"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
